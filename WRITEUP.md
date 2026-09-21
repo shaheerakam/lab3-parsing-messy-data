@@ -71,6 +71,8 @@ The 12 impossible glucose values are the clearest example: two independent metho
 - Regex: it took me about 3-4 hours from setup to a finished script, and that was with step-by-step help from Claude. Some of that time went to setup problems (the missing CSV, a long terminal paste that got stuck in "heredoc" mode and had to be replaced with a text editor). I also had to learn regex tokens (\d, \w, [sS], -?, {n}, fullmatch) as I went. Fixing a single pattern was quick, but the total effort was much higher than the AI.
 - AI: about 1 minute from upload to output, plus a few minutes to save it as a file.
 
+Which caught more edge cases: neither caught more overall. The AI noticed the impossible mmol/L glucose values on its own without being told to look, while my regex only caught them because I added a plausibility check after seeing the data. My script caught things the AI's CSV did not record: it flags S0012 and S0056 as missing_value and S0032 and S0043 as asterisk_removed in a per-row glucose_flag column. The AI mentioned those rows only in its chat message, and its CSV has no per-row trail.
+
 So the AI was far faster to get a first result. But the regex script is a reusable, testable file that I understand line by line, and it produced information the AI's CSV did not (flag columns, original values, flag counts).
 
 ## 6. Which I would trust for a real dataset
