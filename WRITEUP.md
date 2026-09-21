@@ -84,3 +84,28 @@ For a real dataset I would not trust either one alone.
 - In both cases I would add a plausibility check on the numbers and a human check on the flagged rows and ambiguous dates, and I would keep the original values next to the cleaned ones.
 
 Limitations: I could see only part of the file when I first wrote the patterns (the first 14 rows), so the script prints PROBLEM for anything unrecognized. It printed none across all 60 rows, but I only have the two tools to compare with, not an answer key, so I cannot be sure that every value agreed on is correct.
+
+---
+
+# Graduate addendum (optional extra credit): messy_sequences.fasta
+
+## FASTA: what I did
+Regex: clean_sequences.py reads the 8 records, splits each header into sample_id, organism, gene, header_length_bp, and note, and also measures the real sequence length (actual_length_bp) so I can check the header. Output: clean_sequences.csv (no PROBLEM lines).
+AI: one prompt to a fresh chat (in AI_USAGE.md) with the same output columns. It took about 20 seconds. Output: ai_clean_sequences.csv. compare_sequences.py lines the two up (comparison_sequences_diffs.csv).
+
+## FASTA: agreement and disagreement
+The two tables agreed on all 8 rows and every column: 0 disagreements. Both normalized Homo_sapiens, "Homo sapiens", H.sapiens, and Hsapiens to "Homo sapiens", both turned seq6 into sample_006, both read len:NA in sample_008 as no stated length (blank, and no note), and both got the same actual lengths (120, 134, 157, 104, 144, 125, 135, 123). The AI counted bases correctly.
+
+## FASTA: failure modes
+1. Header lengths that are wrong (sample_003 and sample_005). sample_003's header says length=150bp but the sequence is 157 bases; sample_005's says 130 bp but it is 144. Of the 3 headers that state a numeric length (sample_001, 003, 005), only sample_001 matches. My regex extracted exactly what the header said, so it was faithful to the text and still gave a wrong length. That is why I added actual_length_bp and a length_check column. The AI mentioned both mismatches in its chat message but its CSV has no per-row check column.
+2. seq6 (sample_006). It has no "sample" prefix, so turning seq6 into sample_006 is an assumption. Both approaches made it and agreed, but nothing in the file proves that seq6 is sample 6.
+3. Unlabeled genes (sample_003, sample_005, sample_006). These headers give a bare gene symbol with no gene= label. My regex guesses that an ALL-CAPS word between | or ; separators is the gene, which works here but would miss a lowercase or mixed-case symbol or grab a wrong word. The AI's message also described this loosely: it said the gene appeared as target= or a bare field "for records 4 and 5", but target= appears only in record 4, and the bare symbols are in records 3, 5, and 6.
+Both approaches agreeing on all 8 rows does not show they are right; the length mismatches are the only place either tool checked the data against something other than the header.
+
+## FASTA: time
+AI about 20 seconds. Regex: 1-2 hours (including reading the 8 headers and testing).
+
+# Samples x features x metadata table (from clean_samples.csv)
+I reshaped clean_samples.csv into feature_table.csv with build_feature_table.py: one row per sample (60 rows, 60 unique sample_ids), with feature columns (glucose_mg_dl, glucose_usable_mg_dl, age_years, glucose_missing, glucose_implausible) and metadata columns (sex, enrollment_site, dob, glucose_flag, notes). Age is computed from dob at a fixed reference date (2026-09-21) so the result is reproducible; ages range from 8 to 75. I left out patient_name because it is an identifier, not a feature. Enrollment sites are balanced (Site A 19, Site B 21, Site C 20). Sex counts: F 18, M 23, Unknown 19. Example row: S0001 is 64 years old, female, Site A, glucose 75.4 mg/dL, not flagged.
+
+Analytic readiness: the table is not modeling-ready yet. Types are consistent and units are resolved to mg/dL, but resolved is not the same as correct: the 12 mmol/L rows (20% of samples) converted to impossible values, so I blank them in glucose_usable_mg_dl and only 46 of 60 samples have a usable glucose. Missingness is documented rather than dropped (2 N/A values, plus the 12 excluded), but before modeling I would need to find out whether the mmol/L labels are simply wrong, since if those readings are really mg/dL I could recover them, and that needs confirmation from whoever collected the data. I would also need to decide how to treat the sex column, where 19 of 60 rows are Unknown (4 were blank cells and 15 said "unknown" or "U"), and whether blank and "unknown" should be one category or two. Finally, I would need to check the ambiguous dotted dates that affect age, and note that there is no outcome variable and only 60 samples.
