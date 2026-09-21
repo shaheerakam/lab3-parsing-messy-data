@@ -1,61 +1,61 @@
-sample_id,sex,enrollment_site
-S0001,F,Site A
-S0002,M,Site A
-S0003,F,Site B
-S0004,F,Site B
-S0005,M,Site A
-S0006,F,Site B
-S0007,Unknown,Site A
-S0008,M,Site A
-S0009,F,Site A
-S0010,F,Site C
-S0011,M,Site B
-S0012,Unknown,Site B
-S0013,Unknown,Site A
-S0014,F,Site B
-S0015,F,Site B
-S0016,F,Site C
-S0017,M,Site C
-S0018,Unknown,Site B
-S0019,Unknown,Site B
-S0020,M,Site B
-S0021,M,Site C
-S0022,M,Site A
-S0023,M,Site A
-S0024,M,Site B
-S0025,F,Site C
-S0026,Unknown,Site C
-S0027,M,Site C
-S0028,M,Site A
-S0029,F,Site C
-S0030,Unknown,Site C
-S0031,M,Site B
-S0032,F,Site C
-S0033,Unknown,Site B
-S0034,M,Site C
-S0035,Unknown,Site C
-S0036,F,Site A
-S0037,Unknown,Site C
-S0038,Unknown,Site B
-S0039,Unknown,Site C
-S0040,M,Site C
-S0041,M,Site A
-S0042,M,Site A
-S0043,F,Site A
-S0044,Unknown,Site A
-S0045,Unknown,Site C
-S0046,Unknown,Site C
-S0047,F,Site B
-S0048,M,Site A
-S0049,F,Site B
-S0050,F,Site A
-S0051,Unknown,Site A
-S0052,M,Site B
-S0053,Unknown,Site B
-S0054,M,Site C
-S0055,Unknown,Site A
-S0056,Unknown,Site B
-S0057,M,Site C
-S0058,F,Site B
-S0059,M,Site C
-S0060,M,Site B
+sample_id,patient_name,dob,sex,enrollment_site,glucose_mg_dl,glucose_original_value,glucose_original_unit,glucose_flag,notes
+S0001,A. Nguyen,1962-07-09,F,Site A,75.4,75.4,mg/dL,,
+S0002,T. Patel,1974-12-16,M,Site A,120.0,120.0,mg/dL,,
+S0003,R. Martinez,1953-11-24,F,Site B,84.2,84.2,mg/dL,,
+S0004,B. Smith,1975-12-18,F,Site B,120.0,120.0,mg/dL,,
+S0005,B. Martinez,1997-12-02,M,Site A,248.1,248.1,mg/dL,,
+S0006,A. Johnson,1955-12-09,F,Site B,2543.9,141.2,mmol/L,converted_from_mmol;implausible_after_conversion,
+S0007,T. Martinez,1969-09-04,Unknown,Site A,225.0,225.0,mg/dL,,
+S0008,T. Martinez,1997-06-21,M,Site A,192.7,192.7,mg/dL,,
+S0009,A. Nguyen,2018-05-11,F,Site A,221.5,221.5,mg/dL,,
+S0010,A. Martinez,1951-10-01,F,Site C,215.2,215.2,mg/dL,,re-draw requested
+S0011,K. Garcia,1997-10-16,M,Site B,1796.2,99.7,mmol/L,converted_from_mmol;implausible_after_conversion,
+S0012,S. Kim,2008-04-21,Unknown,Site B,,N/A,mg/dL,missing_value,re-draw requested
+S0013,M. Smith,2006-08-14,Unknown,Site A,224.7,224.7,mg/dL,,
+S0014,K. Patel,1986-07-09,F,Site B,2410.5,133.8,mmol/L,converted_from_mmol;implausible_after_conversion,
+S0015,B. Smith,1980-06-10,F,Site B,2716.8,150.8,mmol/L,converted_from_mmol;implausible_after_conversion,
+S0016,B. Smith,1998-07-01,F,Site C,2026.8,112.5,mmol/L,converted_from_mmol;implausible_after_conversion,
+S0017,T. Smith,1973-10-17,M,Site C,4489.6,249.2,mmol/L,converted_from_mmol;implausible_after_conversion,
+S0018,A. Johnson,2002-05-30,Unknown,Site B,84.4,84.4,mg/dL,,re-draw requested
+S0019,M. Martinez,2005-07-26,Unknown,Site B,164.1,164.1,mg/dL,,
+S0020,S. Brown,2017-06-15,M,Site B,249.3,249.3,mg/dL,,
+S0021,B. Patel,1964-02-26,M,Site C,187.7,187.7,mg/dL,,
+S0022,J. Nguyen,1959-08-09,M,Site A,199.2,199.2,mg/dL,,
+S0023,A. Garcia,1974-10-28,M,Site A,184.7,184.7,mg/dL,,
+S0024,B. Garcia,2011-12-30,M,Site B,3053.7,169.5,mmol/L,converted_from_mmol;implausible_after_conversion,
+S0025,A. Johnson,1972-05-21,F,Site C,143.1,143.1,mg/dL,,
+S0026,J. Kim,2016-01-30,Unknown,Site C,202.3,202.3,mg/dL,,
+S0027,K. Patel,1991-04-19,M,Site C,111.0,111.0,mg/dL,,
+S0028,S. Johnson,1985-11-09,M,Site A,102.1,102.1,mg/dL,,re-draw requested
+S0029,T. Martinez,1960-05-17,F,Site C,148.5,148.5,mg/dL,,
+S0030,R. Garcia,1976-12-10,Unknown,Site C,123.2,123.2,mg/dL,,
+S0031,J. Martinez,1986-06-07,M,Site B,211.4,211.4,mg/dL,,
+S0032,J. Garcia,2009-07-23,F,Site C,112.3,112.3*,mg/dL,asterisk_removed,
+S0033,K. Martinez,1956-07-14,Unknown,Site B,1891.7,105.0,mmol/L,converted_from_mmol;implausible_after_conversion,
+S0034,B. Kim,2012-06-07,M,Site C,91.8,91.8,mg/dL,,
+S0035,K. Martinez,1995-04-15,Unknown,Site C,4055.4,225.1,mmol/L,converted_from_mmol;implausible_after_conversion,
+S0036,K. Patel,1956-12-13,F,Site A,230.7,230.7,mg/dL,,
+S0037,B. Kim,1998-09-06,Unknown,Site C,145.6,145.6,mg/dL,,
+S0038,R. Nguyen,1987-08-05,Unknown,Site B,2835.7,157.4,mmol/L,converted_from_mmol;implausible_after_conversion,
+S0039,K. Lee,1997-12-02,Unknown,Site C,1349.4,74.9,mmol/L,converted_from_mmol;implausible_after_conversion,
+S0040,M. Brown,2018-04-17,M,Site C,145.9,145.9,mg/dL,,
+S0041,M. Garcia,2008-06-21,M,Site A,221.1,221.1,mg/dL,,
+S0042,K. Nguyen,1965-01-20,M,Site A,174.2,174.2,mg/dL,,
+S0043,M. Garcia,2006-04-10,F,Site A,223.1,223.1*,mg/dL,asterisk_removed,
+S0044,R. Garcia,1980-08-12,Unknown,Site A,148.0,148.0,mg/dL,,
+S0045,S. Martinez,1998-04-13,Unknown,Site C,176.6,176.6,mg/dL,,
+S0046,M. Brown,2009-12-12,Unknown,Site C,2315.1,128.5,mmol/L,converted_from_mmol;implausible_after_conversion,
+S0047,S. Davis,1967-02-21,F,Site B,169.9,169.9,mg/dL,,
+S0048,B. Nguyen,2012-01-24,M,Site A,155.2,155.2,mg/dL,,
+S0049,S. Nguyen,1960-10-28,F,Site B,241.2,241.2,mg/dL,,
+S0050,S. Garcia,1976-07-30,F,Site A,197.4,197.4,mg/dL,,
+S0051,J. Brown,1951-02-06,Unknown,Site A,103.2,103.2,mg/dL,,
+S0052,K. Garcia,2011-08-02,M,Site B,240.8,240.8,mg/dL,,
+S0053,M. Davis,1989-09-20,Unknown,Site B,80.8,80.8,mg/dL,,
+S0054,J. Patel,1956-09-25,M,Site C,176.9,176.9,mg/dL,,re-draw requested
+S0055,B. Patel,2006-01-28,Unknown,Site A,186.6,186.6,mg/dL,,
+S0056,S. Brown,2011-10-14,Unknown,Site B,,N/A,mmol/L,missing_value,
+S0057,R. Martinez,1958-03-12,M,Site C,217.9,217.9,mg/dL,,
+S0058,S. Lee,1989-02-08,F,Site B,130.0,130.0,mg/dL,,
+S0059,T. Davis,1957-11-25,M,Site C,142.8,142.8,mg/dL,,
+S0060,R. Martinez,2006-02-09,M,Site B,93.6,93.6,mg/dL,,
