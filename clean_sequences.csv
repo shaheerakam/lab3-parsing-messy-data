@@ -1,0 +1,9 @@
+sample_id,organism,gene,header_length_bp,actual_length_bp,length_check,note,raw_header
+sample_001,Homo sapiens,BRCA1,120,120,match,,sample_001|organism=Homo_sapiens|gene=BRCA1|len=120
+sample_002,Homo sapiens,TP53,,134,no_length_in_header,,Sample002 organism:Homo sapiens gene:TP53
+sample_003,Homo sapiens,EGFR,150,157,MISMATCH,,sample-003 | Homo_sapiens | EGFR | length=150bp
+sample_004,Homo sapiens,BRCA1,,104,no_length_in_header,,SAMPLE_004;species=H.sapiens;target=BRCA1
+sample_005,Homo sapiens,TP53,130,144,MISMATCH,,sample005 Homo sapiens; TP53; 130 bp
+sample_006,Homo sapiens,EGFR,,125,no_length_in_header,,seq6|Hsapiens|EGFR
+sample_007,Homo sapiens,BRCA1,,135,no_length_in_header,re-sequenced,Sample_007 organism=Homo_sapiens|gene=BRCA1|note:re-sequenced
+sample_008,Homo sapiens,TP53,,123,header_length_is_NA,,sample-8 species:Homo_sapiens gene:TP53 len:NA
