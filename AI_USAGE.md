@@ -40,3 +40,6 @@ Other judgment calls:
 - It said 15 values were impossible but listed only 12 IDs. My regex flagged exactly 12.
 - It left blank sex values blank, while my regex wrote "Unknown" (4 disagreements: S0013, S0018, S0037, S0046).
 - Both approaches assumed month-first for ambiguous dotted dates (for example 09.06.98).
+
+## Write-up
+Used Claude to lengthen and include higher detail into WRITEUP.md based on my original writing and directions. I reviewed it against my outputs and edited it accordingly.
